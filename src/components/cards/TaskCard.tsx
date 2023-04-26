@@ -1,4 +1,4 @@
-const Card = () => {
+export const Card = () => {
   //Default random value for story points
   return (
     <article className="w-sm border border-gray-800 rounded overflow-hidden shadow-box shadow-gray-800 hover:shadow-box hover:bg-slate-900">
@@ -27,5 +27,3 @@ const Card = () => {
     </article>
   );
 };
-
-export default Card;

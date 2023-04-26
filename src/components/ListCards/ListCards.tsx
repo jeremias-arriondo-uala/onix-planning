@@ -1,9 +1,6 @@
+import type { ListCardsProps } from "@/types";
 import { PointCard } from "../cards/PointCard";
 import { fibonacciArray } from "../../utils/fibonacciArray";
-
-type ListCardsProps = {
-  cantCards?: number;
-};
 
 export const ListCards = ({ cantCards = 13 }: ListCardsProps) => {
   const cardsFibonacci = fibonacciArray(cantCards);

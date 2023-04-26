@@ -1,3 +1,4 @@
+"use client";
 import type { PointCardProps } from "@/types";
 
 export const PointCard = ({ value = 0 }: PointCardProps) => {

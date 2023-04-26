@@ -1,9 +1,13 @@
 import { Inter } from "next/font/google";
-import Card from "@/components/cards/TaskCard";
-import { PointCard } from "@/components/cards/PointCard";
+import { Card } from "@/components/cards/TaskCard";
 import { ListCards } from "@/components/ListCards/ListCards";
 
 const inter = Inter({ subsets: ["latin"] });
+
+export const metadata = {
+  title: "Planning",
+  description: "Planifica tus historias facilmente",
+};
 
 export default function Home() {
   return (
@@ -17,7 +21,7 @@ export default function Home() {
         </div>
       </div>
       <div>
-        <ListCards cards={[{ value: 1 }, { value: 2 }, { value: 3 }]} />
+        <ListCards cantCards={13} />
       </div>
       <section>
         <Card />

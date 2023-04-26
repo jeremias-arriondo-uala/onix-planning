@@ -3,3 +3,7 @@ export type PointCardProps = {
 };
 
 export type CardProps = {};
+
+export type ListCardsProps = {
+  cantCards?: number;
+};
