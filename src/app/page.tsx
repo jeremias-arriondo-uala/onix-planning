@@ -11,17 +11,25 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex flex-col gap-8 items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Ónix planning
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          Labs & Support Team
-        </div>
+        <p className="text-primary text-hover text-lg">Poor planning</p>
+        <div className="text-primary">Labs & Support Team</div>
       </div>
       <div>
         <ListCards cantCards={13} />
+      </div>
+      <div className="flex justify-center mb-12">
+        <div className="relative rounded-lg pointer-events-none shadow-lgDark ">
+          <div className="z-10 relative overflow-hidden rounded-[inherit] p-[3px] m-[-2px] isolate">
+            <div className="will-change-transform animate-buttonStroke blur-[4px] origin-[center_center] absolute top-0 left-0 right-0 bottom-0 bg-buttonConicGradient"></div>
+            <div className="relative z-100">
+              <div className="flex items-center space-x-3 bg-gray-100 dark:bg-[#0e1422] hover:bg-gray-200 border border-[#ffffff10] text-gray-900 dark:text-white font-bold px-8 py-4 rounded-lg">
+                <Card />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <section>
         <Card />
