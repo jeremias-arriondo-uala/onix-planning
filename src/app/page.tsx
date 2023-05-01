@@ -5,7 +5,7 @@ import { ListCards } from "@/components/ListCards/ListCards";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Planning",
+  title: "Ónix Planning",
   description: "Planifica tus historias facilmente",
 };
 
@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <main className="flex flex-col gap-8 items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="text-primary text-hover text-lg">Poor planning</p>
+        <p className="text-primary text-hover text-lg">Ónix planning</p>
         <div className="text-primary">Labs & Support Team</div>
       </div>
       <div>

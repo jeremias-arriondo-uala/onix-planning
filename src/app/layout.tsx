@@ -1,3 +1,5 @@
+import { Navbar } from "@/components/Navbar";
+import { Providers } from "@/components/Providers";
 import "@/styles/globals.css";
 
 // font
@@ -14,7 +16,10 @@ export default function RootLayout({
       <body
         className={`${inter.variable} font-sans antialiased transition-colors bg-white dark:bg-black min-h-screen grid grid-rows-[auto_1fr_auto]`}
       >
-        <main className="container px-4 mx-auto">{children}</main>
+        <Providers>
+          <Navbar />
+          <main className="container px-4 mx-auto">{children}</main>
+        </Providers>
       </body>
     </html>
   );
