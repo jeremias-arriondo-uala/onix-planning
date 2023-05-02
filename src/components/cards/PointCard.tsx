@@ -1,5 +1,5 @@
 "use client";
-import type { PointCardProps } from "@/types";
+import type { PointCardProps } from "@/@types";
 
 export const PointCard = ({ value = 0 }: PointCardProps) => {
   return (

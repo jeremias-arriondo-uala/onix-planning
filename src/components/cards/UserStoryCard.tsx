@@ -1,11 +1,15 @@
-type TaskCard = {
-  title: string;
-  subtitle: string;
-  point?: number;
-  id: string;
-};
+import { UserStory } from "@/@types";
 
-export const TaskCard = ({ title, subtitle, point }: TaskCard) => {
+interface TaskCard extends UserStory {
+  newKey: string;
+}
+
+export const TaskCard = (story: TaskCard) => {
+  const {
+    newKey,
+    self,
+    fields: { summary, description, status, storyPoint },
+  } = story;
   //Default random value for story points
   return (
     <article className="w-96 flex justify-center mb-12">
@@ -16,19 +20,19 @@ export const TaskCard = ({ title, subtitle, point }: TaskCard) => {
             <div className="flex items-center space-x-3 bg-gray-100 dark:bg-[#0e1422] hover:bg-gray-200 border border-[#ffffff10] text-gray-900 dark:text-white font-bold px-8 py-4 rounded-lg">
               <div className="py-4 px-2">
                 <section>
-                  <h3 className="text-primary">{title}</h3>
+                  <h3 className="text-primary">{summary}</h3>
                 </section>
                 <section className="my-2">
-                  <span className="text-gray-500 text-base">{subtitle}</span>
+                  <span className="text-gray-500 text-base">{description}</span>
                 </section>
                 <div className="flex flex-col">
                   <span
                     title="Custom tooltip text"
                     className="text-gray-700 text-base"
                   >
-                    {point && point}
+                    {storyPoint && storyPoint}
                   </span>
-                  <span className="text-primary">BO_Jamon</span>
+                  {/* <span className="text-primary">{key}</span> */}
                 </div>
                 <div className="my-2 flex gap-2">
                   {/* <img
@@ -36,7 +40,7 @@ export const TaskCard = ({ title, subtitle, point }: TaskCard) => {
             src="https://via.placeholder.com/20?text=J"
             alt="img"
           /> */}
-                  <span className="text-primary">DTTS-3947</span>
+                  <span className="text-primary">{newKey}</span>
                 </div>
               </div>
             </div>

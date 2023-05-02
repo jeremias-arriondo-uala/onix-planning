@@ -1,4 +1,4 @@
-import type { ListCardsProps } from "@/types";
+import type { ListCardsProps } from "@/@types";
 import { PointCard } from "../Cards/PointCard";
 import { fibonacciArray } from "../../utils/fibonacciArray";
 
