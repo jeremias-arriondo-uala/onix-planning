@@ -11,7 +11,6 @@ export default async function handler(
 
   // Lee el contenido del archivo JSON
   const jsonData = JSON.parse(fs.readFileSync(filePath, "utf8"));
-  console.log(jsonData);
   // Envía el contenido del archivo JSON como respuesta
   res.status(200).json(jsonData);
 }

@@ -7,10 +7,11 @@ import { useStoryPointStore } from "@/store/storyPoint";
 import type { UserStory } from "@/@types";
 
 export const Stories = () => {
-  const [storySelected, setStorySelected] = useState<UserStory>();
+  const selectUserStory = useStoryPointStore((state) => state.selectUserStory);
+  const storySelected = useStoryPointStore((state) => state.currentUserStory);
 
   const onSelectStory = (story: UserStory) => {
-    setStorySelected(story);
+    selectUserStory(story);
   };
   // Hago un fetch a la data mockeada
   const fetchStories = useStoryPointStore((state) => state.fetchStories);
@@ -21,10 +22,10 @@ export const Stories = () => {
   const userStories = useStoryPointStore((state) => state.userStories);
   return (
     <section>
-      <div className="grid  sm:grid-cols-[1fr_1fr] gap-8 my-8">
+      <div className="grid sm:grid-cols-[1fr_1fr] gap-8 my-8">
         <div className="w-full">
           <h3 className="py-4">Historia a estimar:</h3>
-          {storySelected ? (
+          {storySelected?.id ? (
             <TaskCard
               {...storySelected}
               newKey={storySelected.key}
