@@ -59,4 +59,9 @@
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 2rem;
   }
+
+  .inner-shadow {
+    box-shadow: inset 0px 11px 15px -10px rgba(99, 102, 241, 0.5),
+      inset 0px -11px 15px -10px rgba(99, 102, 241, 0.5);
+  }
 }

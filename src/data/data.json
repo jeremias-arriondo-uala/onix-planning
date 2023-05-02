@@ -1,0 +1,54 @@
+[
+    {
+        "id": "0001",
+        "key": "BMS-001",
+        "self": "https://your-domain.atlassian.net/rest/api/2/issue/BMS-001",
+        "fields": {
+            "summary": "Install package to repository",
+            "description": "As a user, I want to be able to search for products on the website so that I can find what I'm looking for quickly and easily.",
+            "status": {
+                "name": "To Do"
+            },
+            "storyPoint": null
+        }
+    },
+    {
+        "id": "0002",
+        "key": "BMS-002",
+        "self": "https://your-domain.atlassian.net/rest/api/2/issue/BMS-002",
+        "fields": {
+            "summary": "Fix routes on server",
+            "description": "As a user, I want to be able to search for products on the website so that I can find what I'm looking for quickly and easily.",
+            "status": {
+                "name": "To Do"
+            },
+            "storyPoint": null
+        }
+    },
+    {
+        "id": "0003",
+        "key": "BMS-003",
+        "self": "https://your-domain.atlassian.net/rest/api/2/issue/BMS-003",
+        "fields": {
+            "summary": "Deploy changes upgrade",
+            "description": "As a user, I want to be able to search for products on the website so that I can find what I'm looking for quickly and easily.",
+            "status": {
+                "name": "To Do"
+            },
+            "storyPoint": null
+        }
+    },
+    {
+        "id": "0004",
+        "key": "BMS-004",
+        "self": "https://your-domain.atlassian.net/rest/api/2/issue/BMS-004",
+        "fields": {
+            "summary": "Breaking production",
+            "description": "As a user, I want to be able to search for products on the website so that I can find what I'm looking for quickly and easily.",
+            "status": {
+                "name": "To Do"
+            },
+            "storyPoint": null
+        }
+    }
+]
