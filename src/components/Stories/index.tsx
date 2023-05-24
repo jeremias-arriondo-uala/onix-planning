@@ -1,18 +1,19 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { TaskCard } from "../Cards/UserStoryCard";
+import { TaskCard } from "../cards/UserStoryCard";
 import { ListCards } from "../ListCards/ListCards";
+import { BacklogTasks } from "../BacklogTasks";
 import { useStoryPointStore } from "@/store/storyPoint";
 import type { UserStory } from "@/@types";
 
 export const Stories = () => {
-  const selectUserStory = useStoryPointStore((state) => state.selectUserStory);
-  const storySelected = useStoryPointStore((state) => state.currentUserStory);
+  const { selectUserStory, currentUserStory } = useStoryPointStore();
 
   const onSelectStory = (story: UserStory) => {
     selectUserStory(story);
   };
+
   // Hago un fetch a la data mockeada
   const fetchStories = useStoryPointStore((state) => state.fetchStories);
   useEffect(() => {
@@ -20,15 +21,16 @@ export const Stories = () => {
   }, [fetchStories]);
 
   const userStories = useStoryPointStore((state) => state.userStories);
+
   return (
     <section>
       <div className="grid sm:grid-cols-[1fr_1fr] gap-8 my-8">
         <div className="w-full">
           <h3 className="py-4">Historia a estimar:</h3>
-          {storySelected?.id ? (
+          {currentUserStory?.id ? (
             <TaskCard
-              {...storySelected}
-              newKey={storySelected.key}
+              {...currentUserStory}
+              newKey={currentUserStory.key}
               // point={storySelected?.point}
             />
           ) : (
@@ -39,34 +41,13 @@ export const Stories = () => {
         </div>
         <div>
           <h3 className="py-4">Historias en backlog: </h3>
-          <ul className="inner-shadow max-w-sm max-h-48 overflow-auto  divide-y divide-gray-200 dark:divide-gray-700">
-            {userStories?.map((story) => {
-              return (
-                <li key={story.id} className="py-4">
-                  <div className="flex items-center space-x-4">
-                    <div className="flex-1 min-w-0">
-                      <button
-                        className={`inline-block text-left overflow-hidden ${
-                          storySelected?.id === story.id && "text-active"
-                        }`}
-                        onClick={() => onSelectStory(story)}
-                      >
-                        <h5 className="text-hover text-sm font-medium truncate ">
-                          {story?.fields.summary}
-                        </h5>
-                      </button>
-                      <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-                        {story?.fields.description}
-                      </p>
-                    </div>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
+          <BacklogTasks
+            userStories={userStories}
+            taskSelect={currentUserStory}
+            onSelectTask={onSelectStory}
+          />
         </div>
       </div>
-
       <ListCards />
     </section>
   );

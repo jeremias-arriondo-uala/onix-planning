@@ -8,7 +8,7 @@ import { ThemeSwitch } from "../ThemeSwitch";
 export function Navbar() {
   return (
     <>
-      <header className="container flex items-center justify-between px-4 py-4 mx-auto font-semibold leading-6 lg:py-6">
+      <header className="container flex items-center justify-between border-b-2 px-4 py-4 mx-auto font-semibold leading-6 lg:py-6">
         <Link
           className="transition duration-300 text-primary text-hover"
           href="/"
