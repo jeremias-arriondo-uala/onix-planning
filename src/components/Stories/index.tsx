@@ -6,22 +6,23 @@ import { ListCards } from "../ListCards/ListCards";
 import { BacklogTasks } from "../BacklogTasks";
 import { useStoryPointStore } from "@/store/storyPoint";
 import type { UserStory } from "@/@types";
+import { Skeleton } from "../Skeleton";
 
 export const Stories = () => {
-  const { selectUserStory, currentUserStory } = useStoryPointStore();
-
+  const { selectUserStory, currentUserStory, fetchStories } =
+    useStoryPointStore();
+  const [loading, setLoading] = useState(true);
   const onSelectStory = (story: UserStory) => {
     selectUserStory(story);
   };
 
   // Hago un fetch a la data mockeada
-  const fetchStories = useStoryPointStore((state) => state.fetchStories);
   useEffect(() => {
     fetchStories();
   }, [fetchStories]);
 
   const userStories = useStoryPointStore((state) => state.userStories);
-
+  console.log(loading);
   return (
     <section>
       <div className="grid sm:grid-cols-[1fr_1fr] gap-8 my-8">
