@@ -26,40 +26,35 @@ export const Stories = () => {
 
   return (
     <section>
-      <div className="grid sm:grid-cols-[1fr_1fr_1fr] gap-8 my-8">
-        <div className="w-full">
-          {/* <h3 className="py-4">Historia a estimar:</h3> */}
-          <div className="py-4 bg-gray-50 dark:bg-gray-700 rounded-t-lg">
-            <h3 className="px-4">Historia a estimar:</h3>
+      <div className="grid sm:grid-cols-[3fr_1fr] gap-8">
+        <div className="flex flex-col gap-8">
+          <div className="grid sm:grid-cols-[1fr_1fr] gap-8 h-[390px]">
+            <div className="max-w-xl w-[576px]">
+              <BacklogTasks
+                userStories={userStories}
+                taskSelect={currentUserStory}
+                onSelectTask={onSelectStory}
+              />
+            </div>
+            <div className="w-full">
+              <div className="py-4 bg-gray-200 dark:bg-gray-700 rounded-t-lg">
+                <h3 className="px-4 whitespace-nowrap">Historia a estimar:</h3>
+              </div>
+              {currentUserStory?.id ? (
+                <TaskCard {...currentUserStory} newKey={currentUserStory.key} />
+              ) : (
+                <p className="py-4 text-gray-400 dark:text-gray-600">
+                  Selecciona una historia del panel izquierdo para iniciar
+                </p>
+              )}
+            </div>
           </div>
-          {currentUserStory?.id ? (
-            <TaskCard
-              {...currentUserStory}
-              newKey={currentUserStory.key}
-              // point={storySelected?.point}
-            />
-          ) : (
-            <span className="text-gray-400 dark:text-gray-600">
-              Selecciona una historia del panel para iniciar
-            </span>
-          )}
-        </div>
-        <div className="max-w-xl ">
-          {/* <h3 className="py-4">Historias en backlog: </h3> */}
-          <div className="py-4 bg-gray-50 dark:bg-gray-700 rounded-t-lg">
-            <h3 className="px-4">Historias en backlog:</h3>
-          </div>
-          <BacklogTasks
-            userStories={userStories}
-            taskSelect={currentUserStory}
-            onSelectTask={onSelectStory}
-          />
+          <ListCards cantCards={21} />
         </div>
         <div>
           <ListPlayers />
         </div>
       </div>
-      <ListCards />
     </section>
   );
 };

@@ -1,3 +1,4 @@
+import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import { Providers } from "@/components/Providers";
 import "@/styles/globals.css";
@@ -19,6 +20,7 @@ export default function RootLayout({
         <Providers>
           <Navbar />
           <main className="container px-4 mx-auto">{children}</main>
+          <Footer />
         </Providers>
       </body>
     </html>

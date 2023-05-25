@@ -13,7 +13,9 @@ export const PointCard = ({ value = 0 }: PointCardProps) => {
     <button
       onClick={() => changedStoryPoint(value)}
       aria-label="Value point card"
-      className="w-32 h-36 p-4 border border-gray-500 rounded overflow-hidden shadow-box shadow-gray-800 hover:shadow-box cursor-pointer"
+      className={`w-32 h-36 p-4 border border-gray-500 rounded overflow-hidden hover:shadow-box cursor-pointer
+      ${storySelected?.fields?.storyPoint === value ? "shadow-box" : ""}
+      `}
     >
       <div className="flex items-center justify-center h-full border border-gray-500">
         <span

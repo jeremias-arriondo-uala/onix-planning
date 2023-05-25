@@ -11,8 +11,8 @@ export const metadata = {
 export default function Home() {
   return (
     <div className="flex flex-col gap-8 items-center justify-between py-8">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <span className="text-primary">Labs & Support Team</span>
+      <div className="z-10 w-full items-center justify-between lg:flex">
+        <h1 className="text-primary font-mono text-md">Sesión: #1</h1>
       </div>
       <Stories />
     </div>

@@ -13,7 +13,7 @@ export const TaskCard = (story: TaskCard) => {
   } = story;
   //Default random value for story points
   return (
-    <article className="w-96 flex justify-center mb-12">
+    <article className="w-full flex justify-center my-8">
       <div className="relative rounded-lg shadow-lgDark ">
         <div className="z-10 relative overflow-hidden rounded-[inherit] p-[3px] m-[-2px] isolate">
           <div className="will-change-transform animate-buttonStroke blur-[4px] origin-[center_center] absolute top-0 left-0 right-0 bottom-0 bg-buttonConicGradient"></div>

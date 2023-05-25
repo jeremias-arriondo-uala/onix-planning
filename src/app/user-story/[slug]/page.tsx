@@ -11,9 +11,10 @@ export const metadata = {
 export default function Page({ params }: { params: { slug: string } }) {
   return (
     <div className="flex flex-col gap-8 items-center justify-between p-8">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <span className="text-primary">Labs & Support Team</span>
-        <span>Historia de usuario: {params?.slug}</span>
+      <div className="z-10 w-full max-w-5xl items-center justify-between lg:flex">
+        <h1 className="font-mono text-md">
+          Historia de usuario: {params?.slug}
+        </h1>
       </div>
       <InfoUserStory />
     </div>

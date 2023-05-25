@@ -3,7 +3,7 @@ import { SearchIcon } from "../Icons/Search";
 export const QuerySearch = () => {
   return (
     <div className="flex flex-col">
-      <p className="pb-4 text-gray-400 dark:text-gray-600">
+      <p className="py-4 text-gray-400 dark:text-gray-600">
         Ingresa una <b>query</b> para cargar historias
       </p>
       <form>
