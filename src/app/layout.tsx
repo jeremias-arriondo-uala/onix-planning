@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body
         className={`${inter.variable} font-sans antialiased transition-colors bg-white dark:bg-black min-h-screen grid grid-rows-[auto_1fr_auto]`}
       >

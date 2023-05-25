@@ -1,21 +1,17 @@
-import { InfoUserStory } from "@/components/InfoUserStory";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import React from "react";
 
 export const metadata = {
-  title: "User Story",
+  title: "Perfil",
   description: "Planifica tus historias facilmente",
 };
 
-export default function Page({ params }: { params: { slug: string } }) {
+export default function Page() {
   return (
     <div className="flex flex-col gap-8 items-center justify-between p-8">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <span className="text-primary">Labs & Support Team</span>
-        <span>Historia de usuario: {params?.slug}</span>
+        <span>Login</span>
       </div>
-      <InfoUserStory />
     </div>
   );
 }

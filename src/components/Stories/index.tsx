@@ -22,7 +22,7 @@ export const Stories = () => {
   }, [fetchStories]);
 
   const userStories = useStoryPointStore((state) => state.userStories);
-  console.log(loading);
+
   return (
     <section>
       <div className="grid sm:grid-cols-[1fr_1fr] gap-8 my-8">
@@ -40,7 +40,7 @@ export const Stories = () => {
             </span>
           )}
         </div>
-        <div>
+        <div className="max-w-xl ">
           <h3 className="py-4">Historias en backlog: </h3>
           <BacklogTasks
             userStories={userStories}
