@@ -1,3 +1,4 @@
+import { ListPlayers } from "@/components/ListPlayers";
 import { QuerySearch } from "@/components/QuerySearch";
 import { Skeleton } from "@/components/Skeleton";
 import React from "react";
@@ -17,6 +18,7 @@ export default function Page() {
       <section className="w-full">
         <QuerySearch />
         <Skeleton />
+        <ListPlayers />
       </section>
     </div>
   );

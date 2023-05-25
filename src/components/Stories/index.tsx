@@ -7,6 +7,7 @@ import { BacklogTasks } from "../BacklogTasks";
 import { useStoryPointStore } from "@/store/storyPoint";
 import type { UserStory } from "@/@types";
 import { Skeleton } from "../Skeleton";
+import { ListPlayers } from "../ListPlayers";
 
 export const Stories = () => {
   const { selectUserStory, currentUserStory, fetchStories } =
@@ -25,9 +26,12 @@ export const Stories = () => {
 
   return (
     <section>
-      <div className="grid sm:grid-cols-[1fr_1fr] gap-8 my-8">
+      <div className="grid sm:grid-cols-[1fr_1fr_1fr] gap-8 my-8">
         <div className="w-full">
-          <h3 className="py-4">Historia a estimar:</h3>
+          {/* <h3 className="py-4">Historia a estimar:</h3> */}
+          <div className="py-4 bg-gray-50 dark:bg-gray-700 rounded-t-lg">
+            <h3 className="px-4">Historia a estimar:</h3>
+          </div>
           {currentUserStory?.id ? (
             <TaskCard
               {...currentUserStory}
@@ -41,12 +45,18 @@ export const Stories = () => {
           )}
         </div>
         <div className="max-w-xl ">
-          <h3 className="py-4">Historias en backlog: </h3>
+          {/* <h3 className="py-4">Historias en backlog: </h3> */}
+          <div className="py-4 bg-gray-50 dark:bg-gray-700 rounded-t-lg">
+            <h3 className="px-4">Historias en backlog:</h3>
+          </div>
           <BacklogTasks
             userStories={userStories}
             taskSelect={currentUserStory}
             onSelectTask={onSelectStory}
           />
+        </div>
+        <div>
+          <ListPlayers />
         </div>
       </div>
       <ListCards />
