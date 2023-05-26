@@ -6,7 +6,11 @@ export const InfoUserStory = () => {
   const storySelected = useStoryPointStore((state) => state.currentUserStory);
   return (
     <section className="flex flex-col gap-6">
-      <h3 className="text-active text-3xl">{storySelected?.fields?.summary}</h3>
+      <div>
+        <h3 className="text-active text-3xl">
+          {storySelected?.fields?.summary}
+        </h3>
+      </div>
       <p>{storySelected?.fields?.description}</p>
       <p>
         Status:
