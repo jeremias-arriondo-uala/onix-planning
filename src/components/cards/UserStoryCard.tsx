@@ -1,13 +1,13 @@
 import { UserStory } from "@/@types";
 import Link from "next/link";
 
-interface TaskCard extends UserStory {
+type TaskCard = {
   newKey: string;
-}
+  story: UserStory;
+};
 
-export const TaskCard = (story: TaskCard) => {
+export const TaskCard = ({ story, newKey }: TaskCard) => {
   const {
-    newKey,
     self,
     fields: { summary, description, status, storyPoint },
   } = story;
