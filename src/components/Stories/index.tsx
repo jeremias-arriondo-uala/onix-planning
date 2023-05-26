@@ -6,8 +6,8 @@ import { ListCards } from "../ListCards/ListCards";
 import { BacklogTasks } from "../BacklogTasks";
 import { useStoryPointStore } from "@/store/storyPoint";
 import type { UserStory } from "@/@types";
-import { Skeleton } from "../Skeleton";
 import { ListPlayers } from "../ListPlayers";
+import { CurrentUS } from "./CurrentUS";
 
 export const Stories = () => {
   const { selectUserStory, currentUserStory, fetchStories } =
@@ -26,28 +26,14 @@ export const Stories = () => {
 
   return (
     <section>
-      <div className="grid sm:grid-cols-[3fr_1fr] gap-8">
+      <div className="grid lg:grid-cols-[3fr_1fr] gap-8">
         <div className="flex flex-col gap-8">
-          <div className="grid sm:grid-cols-[1fr_1fr] gap-8 h-[390px]">
-            <div className="max-w-xl w-[576px]">
-              <BacklogTasks
-                userStories={userStories}
-                taskSelect={currentUserStory}
-                onSelectTask={onSelectStory}
-              />
-            </div>
-            <div className="w-full">
-              <div className="py-4 bg-gray-200 dark:bg-gray-700 rounded-t-lg">
-                <h3 className="px-4 whitespace-nowrap">Historia a estimar:</h3>
-              </div>
-              {currentUserStory?.id ? (
-                <TaskCard {...currentUserStory} newKey={currentUserStory.key} />
-              ) : (
-                <p className="py-4 text-gray-400 dark:text-gray-600">
-                  Selecciona una historia del panel izquierdo para iniciar
-                </p>
-              )}
-            </div>
+          <div className="grid md:grid-cols-[1fr_1fr] gap-8 md:h-[390px]">
+            <BacklogTasks
+              userStories={userStories}
+              onSelectTask={onSelectStory}
+            />
+            <CurrentUS />
           </div>
           <ListCards cantCards={21} />
         </div>
