@@ -1,3 +1,4 @@
+"use client";
 import { SearchIcon } from "../Icons/Search";
 
 export const QuerySearch = () => {

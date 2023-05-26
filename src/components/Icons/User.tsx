@@ -9,7 +9,7 @@ export const UserIcon = ({ size }: UserIconProps) => {
     <svg
       height={size}
       width={size}
-      enable-background="new 0 0 24 24"
+      enableBackground="new 0 0 24 24"
       aria-hidden="true"
       id="Layer_1"
       version="1.0"
